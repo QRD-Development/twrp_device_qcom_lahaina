@@ -39,20 +39,6 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_TARGET_VNDK_VERSION := 31
 
 # A/B support
-AB_OTA_UPDATER := true
-
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    product \
-    system \
-    system_ext \
-    vbmeta \
-    vbmeta_system \
-    odm \
-    vendor \
-    vendor_boot
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     update_engine \
