@@ -37,6 +37,10 @@ on fs
     chown system system /dev/ion
     install_keyring
 
+on early-fs
+    write /proc/sys/kernel/sched_lib_name "recovery,Updater,updater,update_engine_sideload"
+    write /proc/sys/kernel/sched_lib_mask_force 255
+
 on init
     write /sys/devices/virtual/sec/tsp/after_work 1
     start vendor.qseecomd
