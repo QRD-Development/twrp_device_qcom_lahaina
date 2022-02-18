@@ -150,6 +150,18 @@ BOARD_USES_RECOVERY_AS_BOOT := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libdisplayconfig.qti \
+    vendor.display.config@1.0 \
+    vendor.display.config@2.0 \
+    vendor.qti.hardware.tui_comm@1.0
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/libdisplayconfig.qti.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so \
+    $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.qti.hardware.tui_comm@1.0.so
+
 # Crypto
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
