@@ -38,7 +38,7 @@ on fs
     install_keyring
 
 on early-fs
-    write /proc/sys/kernel/sched_lib_name "recovery,Updater,updater,update_engine_sideload"
+    write /proc/sys/kernel/sched_lib_name "magiskboot,recovery,Updater,updater,update_engine_sideload"
     write /proc/sys/kernel/sched_lib_mask_force 255
 
 on init
