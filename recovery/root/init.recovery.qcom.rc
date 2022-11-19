@@ -44,7 +44,7 @@ on early-fs
 on init
     write /sys/devices/virtual/sec/tsp/after_work 1
     start vendor.qseecomd
-    start boot-hal-1-1
+    start boot-hal-1-2
 
 on boot
     setprop sys.usb.config adb
