@@ -166,6 +166,18 @@ TW_USE_FSCRYPT_POLICY := 2
 # Network
 BUILD_BROKEN_USES_NETWORK := true
 
+# Vibrator
+TARGET_RECOVERY_DEVICE_MODULES += \
+    android.hardware.vibrator-V2-ndk_platform \
+    android.hardware.vibrator-V2-cpp
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V2-cpp.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V2-ndk_platform.so
+
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
+
 # Tool
 TW_INCLUDE_PYTHON := true
 TW_INCLUDE_REPACKTOOLS := true
@@ -198,7 +210,6 @@ TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko snd_event_dlkm.ko msm_drm.ko q6_d
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone20/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 
-TW_NO_HAPTICS := true
 TW_EXCLUDE_APEX := true
 
 USE_RECOVERY_INSTALLER := true
