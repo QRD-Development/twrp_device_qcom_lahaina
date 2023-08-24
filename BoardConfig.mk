@@ -189,8 +189,6 @@ TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone20/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 
-TW_NO_HAPTICS := true
 TW_EXCLUDE_APEX := true
 
 ALLOW_MISSING_DEPENDENCIES := true
-
