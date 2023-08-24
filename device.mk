@@ -79,6 +79,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_HOST_PACKAGES += \
     libandroidicu
 
+# dtb
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilt/lahaina/dtb.img:dtb.img
+
 # tzdata
 PRODUCT_PACKAGES_ENG += \
     tzdata_twrp
