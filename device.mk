@@ -74,7 +74,8 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 PRODUCT_PACKAGES += \
     bootctrl.lahaina.recovery \
-    android.hardware.boot@1.1-impl-qti.recovery
+    android.hardware.boot@1.1-impl-qti.recovery \
+    bootctl
 
 PRODUCT_HOST_PACKAGES += \
     libandroidicu
