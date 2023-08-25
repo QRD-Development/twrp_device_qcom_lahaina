@@ -192,13 +192,7 @@ TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 
 TW_EXCLUDE_APEX := true
 
-ALLOW_MISSING_DEPENDENCIES := true
+USE_RECOVERY_INSTALLER := true
+RECOVERY_INSTALLER_PATH := device/qualcomm/lahaina/installer
 
-#
-# For local builds only
-#
-# TWRP zip installer
-ifneq ($(wildcard bootable/recovery/installer/.),)
-    USE_RECOVERY_INSTALLER := true
-    RECOVERY_INSTALLER_PATH := bootable/recovery/installer
-endif
+ALLOW_MISSING_DEPENDENCIES := true
