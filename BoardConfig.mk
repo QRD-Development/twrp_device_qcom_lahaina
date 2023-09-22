@@ -190,7 +190,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko"
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko msm_drm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone20/temp"
 TW_BATTERY_SYSFS_WAIT_SECONDS := 5
 
