@@ -17,13 +17,13 @@ Shipped Android Version | 11
 **Works**
 
 - Booting.
-- **Decryption** (At least for Android 12)
+- **Decryption** (Android 13 is supported)
 - ADB
 - MTP
 
 **Not Working**
+- Brightness adjust (Only works when flashed using `Flash Current TWRP` )
 - Vibration
-- Installation
 
 ## Thanks
 
@@ -32,5 +32,7 @@ Shipped Android Version | 11
 - [Oneplus 8 TWRP by mauronofrio](https://github.com/mauronofrio/android_device_oneplus_instantnoodle_TWRP)
 - [Xiaomi Mi 10 TWRP by sekaiacg](https://github.com/sekaiacg/android_device_xiaomi_umi_TWRP)
 - [Sony Xperia mark III series TWRP by lolipuru](https://github.com/sonybasement/twrp_android_sony_pdx215)
+- [TWRP A/B Installer Zip Template by osm0sis](https://github.com/osm0sis/twrp_abtemplate)
 - A powerful server from [mujianwu](https://github.com/mujianwu)
 - QRD8350 from [Nonenoon](https://github.com/Nonenoon)
+- Additional assistance from [Idonotkno](https://github.com/Idonotkno) , [BigfootACA](https://github.com/BigfootACA) and [MollySophia](https://github.com/MollySophia)
