@@ -1,5 +1,4 @@
 # Copyright (c) 2012-2015, 2017-2020, The Linux Foundation. All rights reserved.
-# Copyright (C) 2020 Sony Mobile Communications Inc
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -25,10 +24,6 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-# NOTE: This file has been modified by Sony Mobile Communications Inc.
-# Modifications are licensed under the Sony Mobile Communications Inc's
-# End User License Agreement ("EULA"). Any use of the modifications is subject
-# to the terms of the EULA
 
 # Firmware directory Path
 # Below macro will be read by uevent and path will
@@ -38,7 +33,7 @@ firmware_directories /vendor/firmware_mnt/image/
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
 /dev/mhi_*_pipe_4         0660   system     system
-
+/dev/virt-eavb            0660   system     audio
 /dev/genlock              0666   system     system
 /dev/wlan                 0660   wifi       wifi
 /dev/kgsl                 0666   system     system
@@ -179,9 +174,11 @@ firmware_directories /vendor/firmware_mnt/image/
 
 #qvr
 /dev/qvr_external_sensor_ioctl      0660  system  system
-/sys/kernel/qvr_external_sensor/fd  0660  system  system
 /dev/bus/usb/*                      0660  root    usb
 /dev/hidraw*                        0660  root    usb
+
+#rawdump
+/dev/block/platform/soc/*/by-name/rawdump       0660   root     system
 
 # wlan
 /dev/wcnss_wlan           0660   system     system
@@ -235,6 +232,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
+/dev/virt_sndcard_ctl     0660   system     audio
 /dev/ttyHSL1              0660   system     system
 /dev/ttyHS1               0660   system     system
 /dev/mdm                  0660   system     radio
@@ -320,15 +318,9 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/virtual/net/bond0 queues/rx-0/rps_cpus 0660 system system
 
 #nfc permissions
-#/dev/nfc-nci              0660    nfc         nfc
-#/dev/nq-nci               0660    nfc         nfc
-#/dev/assd                 0660    nfc         nfc
-
-# NFC
-/dev/pn553                 0660    nfc         nfc
-
-# eSE device
-/dev/p73                   0660   secure_element secure_element
+/dev/nfc-nci              0660    nfc         nfc
+/dev/nq-nci               0660    nfc         nfc
+/dev/assd                 0660    nfc         nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -343,9 +335,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # Ramdump devices
 /dev/ramdump*             0640   system     system
-
-# tzdbg
-/dev/tzdbg_*              0440   root       root
 
 # Fingerprint device
 /dev/qbt*                 0660   system     system
@@ -369,9 +358,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
-
-# Add TA block device permission
-/dev/block/platform/soc/1d84000.ufshc/by-name/TA        0660   oem_2997   oem_2997
 
 # Kmsg device
 /dev/kmsg                                               0620   root       system
@@ -427,6 +413,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb*     hdmi_audio_cb            0600    audioserver audio
 
 /sys/class/graphics/fb*     lineptr_value            0664    system  graphics
+/sys/class/drm/sde-crtc-*   lineptr_value            0664    system  graphics
 /sys/class/graphics/fb*     msm_fb_persist_mode      0664    system  graphics
 
 /sys/class/graphics/fb0     idle_time                0664    system  graphics
@@ -499,6 +486,3 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_raw                     0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
-
-# Fingerprint sensor device
-/dev/esfp0 0660 system system
