@@ -16,13 +16,11 @@ Shipped Android Version | 11
 
 **Works**
 
-- Booting.
-- **Decryption** (Android 13 is supported)
 - ADB
+- Booting(Tested on Android 12.1 and Android 13)
+- Brightness adjust
+- **Decryption** (Android 13 is also supported!)
 - MTP
-
-**Not Working**
-- Brightness adjust (Only works when flashed using `Flash Current TWRP` )
 - Vibration
 
 ## Thanks
@@ -33,6 +31,7 @@ Shipped Android Version | 11
 - [Xiaomi Mi 10 TWRP by sekaiacg](https://github.com/sekaiacg/android_device_xiaomi_umi_TWRP)
 - [Sony Xperia mark III series TWRP by lolipuru](https://github.com/sonybasement/twrp_android_sony_pdx215)
 - [TWRP A/B Installer Zip Template by osm0sis](https://github.com/osm0sis/twrp_abtemplate)
+- [Kernel Source from LineageOS team](https://github.com/LineageOS/android_kernel_qcom_sm8350)
 - A powerful server from [mujianwu](https://github.com/mujianwu)
 - QRD8350 from [Nonenoon](https://github.com/Nonenoon)
 - Additional assistance from [Idonotkno](https://github.com/Idonotkno) , [BigfootACA](https://github.com/BigfootACA) and [MollySophia](https://github.com/MollySophia)
