@@ -17,7 +17,7 @@ Shipped Android Version | 11
 **Works**
 
 - ADB
-- Booting(Tested on Android 12.1 and Android 13)
+- Booting (Tested on Android 12.1 and Android 13)
 - Brightness adjust
 - **Decryption** (Android 13 is also supported!)
 - MTP
@@ -25,6 +25,43 @@ Shipped Android Version | 11
 
 ## Kernel Source
 https://github.com/snnbyyds/twrp_kernel_qualcomm_lahaina
+
+## Building
+#### Install Dependencies (Ubuntu 22.04 LTS)
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev libelf-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+```
+For Archlinux, you can install `lineageos-devel` from `AUR`
+
+#### Sync Source
+```
+repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
+repo sync
+```
+
+#### Clone Device Tree
+```
+git clone --depth=1 -b twrp-12.1 https://github.com/snnbyyds/twrp_device_qualcomm_lahaina.git device/qualcomm/lahaina
+```
+
+#### Initialize the Environment
+```
+. build/envsetup.sh
+```
+
+#### Pick Addtional Changes from Gerrit (Optional)
+```
+repopick 6526 6049 5743 5693
+```
+See [TWRP Gerrit Code Review](https://gerrit.twrp.me/) for Details
+
+#### Start Building
+```
+lunch twrp_lahaina-userdebug
+mka bootimage
+```
 
 ## Thanks
 
