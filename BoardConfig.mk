@@ -219,6 +219,7 @@ TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko snd_event_dlkm.ko msm_drm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko"
 TW_MAX_BRIGHTNESS := 225
+TW_STATUS_ICONS_ALIGN := center
 TWRP_INCLUDE_LOGCAT := true
 
 USE_RECOVERY_INSTALLER := true
