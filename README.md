@@ -23,6 +23,9 @@ Shipped Android Version | 11
 - MTP
 - Vibration
 
+## Kernel Source
+https://github.com/snnbyyds/twrp_kernel_qualcomm_lahaina
+
 ## Thanks
 
 - [FsCrypt fix by mauronofrio](https://github.com/mauronofrio/android_bootable_recovery)
