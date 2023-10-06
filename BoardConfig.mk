@@ -221,6 +221,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko snd_event_dlkm.ko msm_drm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
 TW_MAX_BRIGHTNESS := 225
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 TW_STATUS_ICONS_ALIGN := center
 TWRP_INCLUDE_LOGCAT := true
 
