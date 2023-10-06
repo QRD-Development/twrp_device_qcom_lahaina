@@ -3,11 +3,11 @@
 /data                      f2fs                /dev/block/bootdevice/by-name/userdata                 flags=fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized+wrappedkey_v0,metadata_encryption=aes-256-xts:wrappedkey_v0,keydirectory=/metadata/vold/metadata_encryption
 /system_ext                ext4                system_ext                                             flags=display=System_EXT
 
-/boot                      emmc                /dev/block/bootdevice/by-name/boot                     flags=display="boot";backup=1;flashimg=1;slotselect
-/vendor_boot               emmc                /dev/block/bootdevice/by-name/vendor_boot              flags=backup=1;display="Vendor Boot";flashimg=1;slotselect
-/dtbo                      emmc                /dev/block/bootdevice/by-name/dtbo                     flags=display="dtbo";backup=1;flashimg=1;slotselect
-/vbmeta                    emmc                /dev/block/bootdevice/by-name/vbmeta                   flags=display="vbmeta";backup=1;flashimg=1;slotselect
-/vbmeta_system             emmc                /dev/block/bootdevice/by-name/vbmeta_system            flags=display="vbmeta_system";backup=1;flashimg=1;slotselect
+/boot                      emmc                /dev/block/bootdevice/by-name/boot                     flags=display="boot";backup=1;flashimg=1;slotselect;wipeingui
+/vendor_boot               emmc                /dev/block/bootdevice/by-name/vendor_boot              flags=backup=1;display="Vendor Boot";flashimg=1;slotselect;wipeingui
+/dtbo                      emmc                /dev/block/bootdevice/by-name/dtbo                     flags=display="dtbo";backup=1;flashimg=1;slotselect;wipeingui
+/vbmeta                    emmc                /dev/block/bootdevice/by-name/vbmeta                   flags=display="vbmeta";backup=1;flashimg=1;slotselect;wipeingui
+/vbmeta_system             emmc                /dev/block/bootdevice/by-name/vbmeta_system            flags=display="vbmeta_system";backup=1;flashimg=1;slotselect;wipeingui
 /misc                      emmc                /dev/block/bootdevice/by-name/misc                     flags=display="misc"
 
 # Firmware partitions
