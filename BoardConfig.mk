@@ -210,6 +210,7 @@ TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone20/temp"
 TW_DEFAULT_BRIGHTNESS := 128
 TW_DEVICE_VERSION :=By snnbyyds on $(shell date +%Y%m%d)
+TW_ENABLE_BLKDISCARD := true
 TW_EXCLUDE_APEX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXTRA_LANGUAGES := true
