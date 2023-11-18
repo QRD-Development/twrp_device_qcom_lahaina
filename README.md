@@ -43,7 +43,7 @@ repo sync
 
 #### Clone Device Tree
 ```
-git clone --depth=1 -b twrp-12.1 https://github.com/snnbyyds/twrp_device_qualcomm_lahaina.git device/qualcomm/lahaina
+git clone --depth=1 -b twrp-12.1 https://github.com/QRD-Development/twrp_device_qcom_lahaina.git device/qcom/lahaina
 ```
 
 #### Initialize the Environment

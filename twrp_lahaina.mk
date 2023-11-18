@@ -16,7 +16,7 @@
 
 # Release name
 PRODUCT_RELEASE_NAME := lahaina
-DEVICE_PATH := device/qualcomm/lahaina
+DEVICE_PATH := device/qcom/lahaina
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, $(DEVICE_PATH)/device.mk)

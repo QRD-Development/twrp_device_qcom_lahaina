@@ -224,7 +224,7 @@ TW_STATUS_ICONS_ALIGN := center
 TWRP_INCLUDE_LOGCAT := true
 
 USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/qualcomm/lahaina/installer
+RECOVERY_INSTALLER_PATH := device/qcom/lahaina/installer
 
 ALLOW_MISSING_DEPENDENCIES := true
 
