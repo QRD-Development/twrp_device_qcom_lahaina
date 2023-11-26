@@ -24,7 +24,7 @@ Shipped Android Version | 11
 - Vibration
 
 ## Kernel Source
-https://github.com/snnbyyds/twrp_kernel_qualcomm_lahaina
+https://github.com/QRD-Development/android_kernel_qcom_sm8350
 
 ## Building
 #### Install Dependencies (Ubuntu 22.04 LTS)
