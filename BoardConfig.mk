@@ -120,7 +120,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # Fstab
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.qcom
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
