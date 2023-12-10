@@ -245,9 +245,6 @@ TW_MAX_BRIGHTNESS := 225
 TW_STATUS_ICONS_ALIGN := center
 TWRP_INCLUDE_LOGCAT := true
 
-USE_RECOVERY_INSTALLER := true
-RECOVERY_INSTALLER_PATH := device/qcom/lahaina/installer
-
 ALLOW_MISSING_DEPENDENCIES := true
 
 # Custom TWRP Versioning
