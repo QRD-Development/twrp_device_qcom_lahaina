@@ -17,14 +17,18 @@ Shipped Android Version | 11
 **Works**
 
 - ADB
-- Booting (Tested on Android 12.1 and Android 13)
+- Booting (Tested on `aospa-uvite-built-on-UotanWorkStation-lahaina-20231211.zip`)
 - Brightness adjust
-- **Decryption** (Android 13 is also supported!)
+- **Decryption**
 - MTP
 - Vibration
 
 ## Kernel Source
 https://github.com/QRD-Development/android_kernel_qcom_sm8350
+
+## Notice
+- TWRP images built with this branch is only compatible with the AOSPA ROM compiled with [AOSPA dt](https://github.com/QRD-Development/android_device_qcom_lahaina) by [QRD-Development](https://github.com/QRD-Development) or other ROMs that uses boot header v4 and may not boot with other firmware!
+- Please use the branch [twrp-12.1](https://github.com/QRD-Development/twrp_device_qcom_lahaina/tree/twrp-12.1) or this [boot.img](https://github.com/QRD-Development/twrp_device_qcom_lahaina/releases/download/20231118/boot.img) for legacy firmwares.
 
 ## Building
 #### Install Dependencies (Ubuntu 22.04 LTS)
@@ -43,7 +47,7 @@ repo sync
 
 #### Clone Device Tree
 ```
-git clone --depth=1 -b twrp-12.1 https://github.com/QRD-Development/twrp_device_qcom_lahaina.git device/qcom/lahaina
+git clone --depth=1 -b twrp-12.1-for-boot-header-v4 https://github.com/QRD-Development/twrp_device_qcom_lahaina.git device/qcom/lahaina
 ```
 
 #### Initialize the Environment
@@ -60,8 +64,24 @@ See [TWRP Gerrit Code Review](https://gerrit.twrp.me/) for Details
 #### Start Building
 ```
 lunch twrp_lahaina-userdebug
-mka bootimage
+mka vendorbootimage
 ```
+
+You'll get `recovery.cpio.lz4` in `out/target/product/lahaina/obj/PACKAGING/vendor_ramdisk_fragments_intermediates`
+
+## Installation
+### For AOSPA ROM made by us that uses lz4-compressed vendor_boot ramdisks:
+#### Enter fastbootd mode
+It seems that our bootloader does *not* support the commands `getvar:max-fetch-size` and `fetch:name`, so we have to enter fastbootd(see [Fastboot in Userspace](https://source.android.com/docs/core/architecture/bootloader/fastbootd)). Here, we use `adb` for example.
+```
+adb reboot fastboot
+```
+#### Flash the modular recovery ramdisk
+```
+cd out/target/product/lahaina/obj/PACKAGING/vendor_ramdisk_fragments_intermediates
+fastboot flash vendor_boot:recovery recovery.cpio.lz4
+```
+This will only work with `userdebug` or `eng` builds. (As per https://source.android.com/docs/core/architecture/bootloader/fastbootd#fastbootd-changes)
 
 ## Thanks
 
@@ -70,6 +90,7 @@ mka bootimage
 - [Oneplus 8 TWRP by mauronofrio](https://github.com/mauronofrio/android_device_oneplus_instantnoodle_TWRP)
 - [Xiaomi Mi 10 TWRP by sekaiacg](https://github.com/sekaiacg/android_device_xiaomi_umi_TWRP)
 - [Sony Xperia mark III series TWRP by lolipuru](https://github.com/sonybasement/twrp_android_sony_pdx215)
+- [marmalade TWRP by CyberDroid23](https://github.com/CyberDroid23/recovery_generic_marmalade)
 - [TWRP A/B Installer Zip Template by osm0sis](https://github.com/osm0sis/twrp_abtemplate)
 - [Kernel Source from LineageOS team](https://github.com/LineageOS/android_kernel_qcom_sm8350)
 - A powerful server from [mujianwu](https://github.com/mujianwu)
